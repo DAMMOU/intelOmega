@@ -51,7 +51,9 @@
 					</div>                   
 				</main> <!-- End App-Content -->
 				@include('layouts.flash')
-				<footer></footer>
+				<footer>
+					@include('layouts.footer')
+				</footer>
 			</div>
 		@endif
 

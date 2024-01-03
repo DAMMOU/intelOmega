@@ -31,7 +31,7 @@
                         <div class="row justify-content-md-center">
                             <div class="col-md-6 col-sm-12">
                                 <div class="input-box mb-4">                             
-                                    <input id="name" type="name" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" autocomplete="off" placeholder="{{ __('First Name') }}" required>
+                                    <input id="firstname" type="name" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" autocomplete="off" placeholder="{{ __('First Name') }}" required>
                                     @error('firstname')
                                         <span class="invalid-feedback" role="alert">
                                             {{ $message }}
