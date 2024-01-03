@@ -13,41 +13,31 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{ URL('/') }}">{{ __('Home') }}</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">{{ __('Prices') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">{{ __('Blogs') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">{{ __('FAQs') }}</a>
                 </li>
-
-                <li class="nav-item dropdown">
-
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('contact-us') }}">{{ __('Contact Us') }}</a>
                 </li>
             </ul>
             
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <div class="d-flex align-items-center">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <a class="btn btn-outline-success" href="#">{{ __('Dashboard') }}</a>
+                        <a class="btn btn-outline-success" href="#">{{ __('Login') }}</a>
+                        <a class="btn btn-outline-success" href="#">{{ __('Sign Up') }}</a>
                     </div>
                 </li>
             </ul>

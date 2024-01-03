@@ -1,0 +1,29 @@
+{
+   
+    "Home": "Accueil",
+    "prices": "Tarifs",
+    "Blogs": "Blogs",
+    "FAQs": "FAQs",
+    "Contact Us": "Contactez-nous",
+    "Dashboard": "Tableau de bord",
+    "Login": "Connexion",
+    "Sign Up": "S'inscrire",
+
+
+    "/**": "Ce fichier contient les traductions pour les titres de sections.",
+    "Article Generator": "Générateur d'articles",
+    "Content Improver": "Améliorateur de contenu",
+    "Blog Sections": "Sections de blog",
+    "Blog Ideas": "Idées de blog",
+    "SEO Meta Descriptions": "Méta-descriptions SEO",
+    "FAQ Answers": "Réponses aux questions fréquentes",
+    "And Many More!": "Et bien d'autres encore",
+    "*/": "", 
+    
+    "Meet": "Rencontrez",
+    "The Future of Writing": "L'avenir de l'écriture",
+    "Let AI create content for blogs, articles, websites, social media and more": "Laissez l'IA créer du contenu pour des blogs, des articles, des sites web, les médias sociaux et bien plus encore",
+    "Try Now For Free": "Essayez maintenant gratuitement"
+    
+    
+}
