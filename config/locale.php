@@ -10,5 +10,11 @@ return [
         'code' => 'fr',
         'display' => 'Francais',
         'flag' => 'fr'
-    ], 
+    ],
+    'zh' => [
+        'code' => 'zh',
+        'display' => '中文',
+        'flag' => 'cn'
+    ],
+
 ];

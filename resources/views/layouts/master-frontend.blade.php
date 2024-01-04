@@ -22,7 +22,8 @@
 			<!--Favicon -->
 		<link rel="icon" href="{{URL::asset('img/brand/favicon.ico')}}" type="image/x-icon"/>
 
-	
+		<!-- JQuery-->
+		<script src="{{URL::asset('plugins/jquery/jquery-3.6.0.min.js')}}"></script>
 		<!-- Bootstrap 5.2.3 -->
 		<link href="{{URL::asset('plugins/bootstrap-5.2.3-dist/css/bootstrap.min.css')}}" rel="stylesheet">
 		<script src="{{URL::asset('js/ikhan.js')}}"></script>
@@ -43,7 +44,7 @@
 			<header>
 					@include('header')
 			</header>
-			<div classe="body">
+
 					<!--  App-Content -->	
 				<main class="main">
 					<div class="content-app">
@@ -54,20 +55,15 @@
 				<footer>
 					@include('layouts.footer')
 				</footer>
-			</div>
+		
 		@endif
 
-		<!-- JQuery-->
 		<script src="{{URL::asset('plugins/jquery/jquery-3.6.0.min.js')}}"></script>
 		<!-- Bootstrap 5-->
 		<script src="{{URL::asset('plugins/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js')}}"></script>
-
-		<script src="{{URL::asset('js/ikhan.js')}}"></script>
-		
-		
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
 		<script src="{{URL::asset('plugins/typed/typed.min.js')}}"></script>
-
+		<script src="{{URL::asset('js/ikhan.js')}}"></script>
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
 				var options = {
@@ -90,6 +86,7 @@
 				var typed = new Typed("#typed", options);
 			});
 		</script>
+		
 	</body>
 </html>
 

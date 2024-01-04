@@ -1,6 +1,6 @@
 @if (true)
     <section id="faq-wrapper">    
-        <div class="container pt-7">
+        <div class="container pt-4">
 
             <div class="row text-center mb-8 mt-7">
                 <div class="col-md-12 title">
@@ -17,17 +17,17 @@
         
                         @foreach ( $faqs as $faq )
 
-                            <div id="accordion" data-aos="fade-left" data-aos-delay="300" data-aos-once="true" data-aos-duration="700">
+                            <div id="accordion" data-aos="fade-left">
                                 <div class="card">
                                     <div class="card-header" id="heading{{ $faq->id }}">
                                         <h5 class="mb-0">
-                                        <span class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapse-{{ $faq->id }}" aria-expanded="false" aria-controls="collapse-{{ $faq->id }}">
+                                        <span class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapse-faq{{ $faq->id }}" aria-expanded="false" aria-controls="collapse-{{ $faq->id }}">
                                             {{ __($faq->question) }}
                                         </span>
                                         </h5>
                                     </div>
                                         
-                                    <div id="collapse-{{ $faq->id }}" class="collapse" aria-labelledby="heading{{ $faq->id }}" data-bs-parent="#accordion">
+                                    <div id="collapse-faq{{ $faq->id }}" class="collapse" aria-labelledby="heading{{ $faq->id }}" data-bs-parent="#accordion">
                                         <div class="card-body">
                                             {!! __($faq->answer) !!}
                                         </div>

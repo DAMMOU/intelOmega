@@ -22,7 +22,13 @@ class ContactUsController extends Controller
     }
 
     public function contactUs(Request $request){
-
+        request()->validate([
+            'firstname' => 'required|string',
+            'lastname' => 'required|string',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'message' => 'required',
+        ]);
         try {
 
             $message = Message::create([

@@ -1,8 +1,7 @@
 @component('mail::message')
 # Contact Us Request Submitted
 
-Customer Name: {{ $input->firstname }} 
-Customer Name: {{ $input->lastname }} 
+Customer Name: {{ $input->firstname }}   {{ $input->lastname }} 
 
 Customer Contacts: <br>
 Email: {{ $input->email }} 

@@ -21,16 +21,15 @@ class HomeController extends Controller
     {
         $information = $this->metadataInformation();
         
-        $review_exists = Review::count();   
+        $count_reviews = Review::count();   
         $reviews = Review::all();
-
         $count_faqs = Faq::count(); 
         $faqs = Faq::where('status', 'visible')->get();
         $count_blogs = Blog::count(); 
         $blogs = Blog::where('status', 'published')->get();
 
         
-        return view('home', compact('information', 'faqs', 'count_faqs', 'reviews', 'blogs', 'count_blogs'));
+        return view('home', compact('information', 'faqs', 'count_faqs', 'reviews', 'count_reviews', 'blogs', 'count_blogs'));
     }
 
    

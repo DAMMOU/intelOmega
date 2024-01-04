@@ -1,5 +1,5 @@
 <!--------------------- FOOTER --------------------->
-<footer id="body-footer" >
+<div id="body-footer" >
 					
 	<div class="container text-center" id="footer">
 								
@@ -9,18 +9,7 @@
 								
 				<img src="{{ URL::asset('img/brand/logo.png') }}" alt="intelOmega Logo">
 
-				    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ut culpa maiores maxime illo nostrum aut totam, porro dolore minima</p>		
-
-				<div class="dropdown header-locale" id="frontend-local">
-                    <a class="nav-link icon" data-bs-toggle="dropdown">
-                        <span class="fs-17 fa fa-globe pr-2"></span><span class="fs-12" style="vertical-align:middle"></span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow animated">
-                        <div class="local-menu">
-                            
-                        </div>
-                    </div>
-				</div>
+				<p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ut culpa maiores maxime illo nostrum aut totam, porro dolore minima</p>		
 
 			</div> <!-- FOOTER LOGO -->
 
@@ -69,7 +58,7 @@
 
                     
    
-                    <div class="col-md-3 col-sm-12 footer-connect pr-0">
+                    <div class="col-md-3 col-sm-12 pr-0">
                                                 
                         <h5>{{ __('Social Media') }}</h5>
 
@@ -92,7 +81,7 @@
 
                         <h5 class="mt-6 mb-4">{{ __('Get Started Today') }}</h5>
 
-                        <a href="{{ url('register') }}" class="btn btn-dark text-white pl-5 pr-5">{{ __('Sign Up Now') }}</a>
+                        <a href="{{ url('register') }}" class="btn btn-primary text-white pl-5 pr-5" id="footer-button">{{ __('Sign Up Now') }}</a>
 
                     </div> 
                 
@@ -106,13 +95,20 @@
 
         <!-- FOOTER Copyright -->
 
-        <div class="copyright">
+        <div id="copyright">
             <div class="row align-items-center">
                 <div class="col-md-12 col-sm-12 text-center">
-                    {{ __('Copyright') }} © {{ date("Y") }} <a class="fs-2 text-info px-2" href="{{ config('app.url') }}">{{ config('app.name') }}.</a> {{ __('All rights reserved') }}
+                    
+                    <span>{{ __('Copyright') }} © {{ date("Y") }} </span>
+                        <a class="fs-2 text-info px-2" href="{{ config('app.url') }}">
+                            {{ config('app.name') }}.
+                        </a> 
+                    <span>{{ __('All rights reserved') }}.</span>
+                    
+                    
                 </div>
                 <div class="col-md-12 col-sm-12 text-center">
-                    <span class="fs-10 font-weight-bold text-info">{{ config('app.version') }}</span>
+                    <span class="fs-9 font-weight-bold text-info">{{ config('app.version') }}</span>
                 </div>
             </div>
         </div>
@@ -121,5 +117,5 @@
 	</div> 
     
     <a href="#top" id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
-</footer>
+</div> 
 <!--------------------- END FOOTER --------------------->

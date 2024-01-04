@@ -1,5 +1,5 @@
 <div id="header">			
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
 
             <a class="navbar-brand" href="#">
@@ -19,25 +19,25 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('Prices') }}</a>
+                    <a class="nav-link menu-link" href="#">{{ __('Prices') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('Blogs') }}</a>
+                    <a class="nav-link menu-link" href="#">{{ __('Blogs') }}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('FAQs') }}</a>
+                <li class="nav-item menu-link">
+                    <a class="nav-link menu-link" href="#">{{ __('FAQs') }}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('contact-us') }}">{{ __('Contact Us') }}</a>
+                <li class="nav-item menu-link">
+                    <a class="nav-link menu-link" href="{{ route('contact-us') }}">{{ __('Contact Us') }}</a>
                 </li>
             </ul>
             
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="menu-buttons">
                 <li class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <div class="d-flex align-items-center">
-                        <a class="btn btn-dark" href="#">{{ __('Dashboard') }}</a>
-                        <a class="btn btn-success" href="#">{{ __('Login') }}</a>
-                        <a class="btn btn-dark" href="#">{{ __('Sign Up') }}</a>
+                        <a class="btn btn-dark menu-button" href="#">{{ __('Dashboard') }}</a>
+                        <a class="btn btn-success menu-button" href="#">{{ __('Login') }}</a>
+                        <a class="btn btn-dark menu-button" href="#">{{ __('Sign Up') }}</a>
                     </div>
                 </li>
             </ul>

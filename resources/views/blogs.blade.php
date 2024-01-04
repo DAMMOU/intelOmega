@@ -51,5 +51,5 @@
                 </div> <!-- END CONTAINER -->
 
                 
-            </section> <!-- END  BLOGS -->
+    </section> <!-- END  BLOGS -->
         @endif
