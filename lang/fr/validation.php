@@ -162,6 +162,10 @@ return [
     |
     */
 
+    'recaptcha' => [
+        'failed' => 'Le captcha ReCaptcha est invalide.',
+    ],
+
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',

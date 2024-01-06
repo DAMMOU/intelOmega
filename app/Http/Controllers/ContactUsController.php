@@ -27,6 +27,7 @@ class ContactUsController extends Controller
             'lastname' => 'required|string',
             'email' => 'required|email',
             'phone' => 'required',
+            'g-recaptcha-response' => 'recaptcha',
             'message' => 'required',
         ]);
         try {

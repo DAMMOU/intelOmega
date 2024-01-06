@@ -168,7 +168,11 @@ return [
     | specify a specific custom language line for a given attribute rule.
     |
     */
+    'recaptcha' => [
+        'failed' => 'The ReCaptcha captcha is invalid.',
+    ],
 
+    
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',

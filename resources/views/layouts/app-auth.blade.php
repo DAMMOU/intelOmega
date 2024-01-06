@@ -45,26 +45,19 @@
 
 		<link href="{{URL::asset('plugins/awselect/awselect.min.css')}}" rel="stylesheet" />
 
-		<!-- All Styles -->
-		<link href="{{URL::asset('css/style.css')}}" rel="stylesheet" />
+		<!-- Auth Styles -->
+		<link href="{{URL::asset('css/auth.css')}}" rel="stylesheet" />
+
+		{!! htmlScriptTagJsApi() !!}
 
 	</head>
 
 	<body class="app sidebar-mini">
-@include('header')
 		<!-- Page -->
-		<div class="page">
-			<div class="page-main">
-				
-				<!-- App-Content -->			
-				<div class="main-content">
-					<div class="side-app">
+		<main class="page">
 
-						@yield('content')
+			@yield('content')
 
-					</div>                   
-				</div>
-		
 		</div><!-- End Page -->
 
 		<!-- JQuery-->

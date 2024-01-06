@@ -1,18 +1,17 @@
 @extends('layouts.app-auth')
 
-
-
 @section('content')
     @if (config('frontend.maintenance') == 'on')			
         @include('layouts.maintenance')
     @else
         @if (true)
             <div class="container-fluid justify-content-center">
-                <div class="row h-100vh align-items-center background-white">
-                    <div class="col-md-7 col-sm-12 text-center background-special h-100 align-middle p-0" id="login-background">
+                <div class="row h-100vh align-items-center background-special h-100 align-middle p-0">
+
+                    <div class="col-md-7 col-sm-12 text-cente d-none d-sm-block" id="login-background">
                         <div class="login-bg"></div>
                     </div>
-                    
+        
                     <div class="col-md-5 col-sm-12 h-100" id="login-responsive">                
                         <div class="card-body pr-10 pl-10 pt-10">
                             <form method="POST" action="{{ route('register') }}">
@@ -64,9 +63,9 @@
                                 <div class="input-box mb-4">                             
                                     <label for="country" class="fs-12 font-weight-bold text-md-right">{{ __('Country') }}</label>
                                     <select id="user-country" name="country" data-placeholder="{{ __('Select Your Country') }}" required>	
-                                        {{--@foreach(config('countries') as $value)
+                                        @foreach(config('countries') as $value)
 											<option value="{{ $value }}" @if(config('settings.default_country') == $value) selected @endif>{{ $value }}</option>
-										@endforeach	--}}									
+										@endforeach										
                                     </select>
                                     @error('country')
                                         <span class="invalid-feedback" role="alert">
@@ -95,25 +94,25 @@
                                         <label class="custom-switch">
                                             <input type="checkbox" class="custom-switch-input" name="agreement" id="agreement" {{ old('remember') ? 'checked' : '' }} required>
                                             <span class="custom-switch-indicator"></span>
-                                            <span class="custom-switch-description fs-10 text-muted">
-                                                    {{__('By continuing, I agree with your')}} 
-                                                    <a href="{{ route('register') }}" class="text-info">{{__('Terms and Conditions')}}</a> 
-                                                    {{__('and')}} <a href="{{ route('register') }}" class="text-info">{{__('Privacy Policies')}}</a>
-                                            </span>
+                                            <span class="custom-switch-description fs-10 text-muted">{{__('By continuing, I agree with your')}} <a href="{{ url('terms') }}" class="text-info">{{__('Terms and Conditions')}}</a> {{__('and')}} <a href="{{ url('privacy') }}" class="text-info">{{__('Privacy Policies')}}</a></span>
                                         </label>   
                                     </div>
                                 </div>
 
-                                <input type="hidden" name="recaptcha" id="recaptcha">
-
+                                <div class="mt-2 mb-2 @error('g-recaptcha-response') is-invalid @enderror">
+                                    {!! htmlFormSnippet() !!}
+                                    @error('g-recaptcha-response')
+                                        <p class="text-danger text-center">{{ $errors->first('g-recaptcha-response') }}</p>
+                                    @enderror
+                                </div>          
+                        
                                 <div class="form-group mb-0">                        
                                     <button type="submit" class="btn btn-primary mr-2">{{ __('Sign Up') }}</button> 
-                                    <p class="fs-10 text-muted mt-2">or <a class="text-info" href="{{ route('register') }}">{{ __('Login') }}</a></p>                               
+                                    <p class="fs-10 text-muted mt-2">or <a class="text-info" href="{{ url('login') }}">{{ __('Login') }}</a></p>                               
                                 </div>
                             </form>
-                        </div>       
+                        </div>     
                     </div>
-                </div>
             </div>
         @else
             <h5 class="text-center pt-9">{{__('New user registration is disabled currently')}}</h5>

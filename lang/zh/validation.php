@@ -123,6 +123,10 @@ return [
     |
     */
 
+    'recaptcha' => [
+        'failed' => 'ReCaptcha验证码无效。',
+    ],
+
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',

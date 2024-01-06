@@ -82,8 +82,13 @@
                             </div>
                         </div>
                     </div>
-
-                    <input name="recaptcha" id="recaptcha">
+                    
+                    <div class="mt-2 mb-2 @error('g-recaptcha-response') is-invalid @enderror">
+                            {!! htmlFormSnippet() !!}
+                            @error('g-recaptcha-response')
+                                <p class="text-danger text-center">{{ $errors->first('g-recaptcha-response') }}</p>
+                            @enderror
+                    </div>
                     
                     <div class="row justify-content-md-center text-center">
                         <!-- ACTION BUTTON -->
@@ -91,6 +96,9 @@
                             <button type="submit" class="btn btn-primary special-action-button">{{ __('Send Message') }}</button>							
                         </div>
                     </div>
+                    
+                    <!-- OR -->
+                   
                 
                 </form>
 
