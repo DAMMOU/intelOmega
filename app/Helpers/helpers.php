@@ -1,5 +1,7 @@
 <?php
-    use Illuminate\Support\Str;
+
+use App\Models\Setting;
+use Illuminate\Support\Str;
 
 define("PAGELIST","liste");
 define("PAGECREATE","create");
@@ -72,3 +74,19 @@ function generateAcronym($str)
 }
 
 
+
+
+function metadataInformation()
+    {
+        $information_rows = ['title', 'author', 'keywords', 'description', 'js', 'css'];
+        $information = [];
+        $settings = Setting::all();
+
+        foreach ($settings as $setting) {
+            if (in_array($setting['name'], $information_rows)) {
+                $information[$setting['name']] = $setting['value'];
+            }
+        }
+
+        return $information;
+    }

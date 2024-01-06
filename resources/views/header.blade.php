@@ -37,7 +37,7 @@
                     <div class="d-flex align-items-center">
                         <a class="btn btn-dark menu-button" href="#">{{ __('Dashboard') }}</a>
                         <a class="btn btn-success menu-button" href="#">{{ __('Login') }}</a>
-                        <a class="btn btn-dark menu-button" href="#">{{ __('Sign Up') }}</a>
+                        <a class="btn btn-dark menu-button" href="{{ route('register') }}">{{ __('Sign Up') }}</a>
                     </div>
                 </li>
             </ul>

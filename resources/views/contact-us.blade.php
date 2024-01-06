@@ -1,5 +1,5 @@
 
-@extends('layouts.master-frontend')
+@extends('layouts.app-frontend')
 @section('content')
 <section id="contact-wrapper">
 
@@ -83,7 +83,7 @@
                         </div>
                     </div>
 
-                    <input type="hidden" name="recaptcha" id="recaptcha">
+                    <input name="recaptcha" id="recaptcha">
                     
                     <div class="row justify-content-md-center text-center">
                         <!-- ACTION BUTTON -->

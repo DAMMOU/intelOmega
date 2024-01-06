@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -19,6 +20,37 @@ return new class extends Migration
             $table->boolean('status')->default(true);
             $table->timestamps();
         });
+
+
+
+
+        // Insérez les langues dans la table
+        DB::table('languages')->insert([
+            [
+                'language' => 'French',
+                'language_code' => 'fr',
+                'language_flag' => 'fr.png', // Vous pouvez ajouter le chemin de votre drapeau ici
+                'status' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'language' => 'English',
+                'language_code' => 'en',
+                'language_flag' => 'en.png', // Ajoutez le chemin de votre drapeau ici
+                'status' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'language' => 'Chinese',
+                'language_code' => 'zh',
+                'language_flag' => 'zh.png', // Ajoutez le chemin de votre drapeau ici
+                'status' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
     }
 
     /**

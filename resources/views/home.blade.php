@@ -1,4 +1,4 @@
-@extends('layouts.master-frontend')
+@extends('layouts.app-frontend')
 
 @section('content')
     <section id="main-wrapper">
