@@ -1,9 +1,9 @@
-@extends('layouts.auth')
+@extends('layouts.app-auth')
 
 @section('content')
 <div class="container-fluid justify-content-center">
     <div class="row h-100vh align-items-center background-white">
-        <div class="col-md-7 col-sm-12 text-center background-special h-100 align-middle p-0" id="login-background">
+        <div class="col-md-7 col-sm-12 text-center background-special align-middle p-0" id="login-background">
             <div class="login-bg"></div>
         </div>
         
@@ -77,24 +77,30 @@
                             </label>   
 
                             <div class="ml-auto">
-                                @if (Route::has('password.request'))
-                                    <a class="text-info fs-12" href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
-                                @endif
+                               {{-- @if (Route::has('password.request'))--}}
+                                    <a class="text-info fs-12" href="{{ url('password.request') }}">{{ __('Forgot Your Password?') }}</a>
+                                {{--@endif--}}
                             </div>
                         </div>
                     </div>
 
-                    <input type="hidden" name="recaptcha" id="recaptcha">
+                    <div class="mt-2 mb-2 @error('g-recaptcha-response') is-invalid @enderror">
+                        {!! htmlFormSnippet() !!}
+                        @error('g-recaptcha-response')
+                            <p class="text-danger text-center">{{ $errors->first('g-recaptcha-response') }}</p>
+                        @enderror
+                    </div>    
 
-                    <div class="form-group mb-0">                        
-                        <button type="submit" class="btn btn-primary mr-2">{{ __('Login') }}</button>       
+                    <div class="form-group mb-0">    
+
+                        <button type="submit" class="btn btn-primary mr-2">{{ __('Login') }}</button>   
+                            
                         @if (config('settings.registration') == 'enabled')
                             <a href="{{ route('register') }}"  class="btn btn-cancel">{{ __('Sign Up') }}</a> 
-                        @endif                         
-                                               
+                        @endif                                               
                     </div>
 
-                    <p class="fs-10 text-muted pt-3">{{ __('By continuing, you agree to our') }} <a href="{{ route('terms') }}" class="text-info">{{ __('Terms and Conditions') }}</a> {{ __('and') }} <a href="{{ route('privacy') }}" class="text-info">{{ __('Privacy Policy') }}</a></p>
+                    <p class="fs-10 text-muted pt-3">{{ __('By continuing, you agree to our') }} <a href="{{ url('terms') }}" class="text-info">{{ __('Terms and Conditions') }}</a> {{ __('and') }} <a href="{{ url('privacy') }}" class="text-info">{{ __('Privacy Policy') }}</a></p>
 
                 </form>
             </div>     
@@ -103,28 +109,4 @@
 </div>
 @endsection
 
-@section('js')
-    <!-- Tippy css -->
-    <script src="{{URL::asset('plugins/tippy/popper.min.js')}}"></script>
-    <script src="{{URL::asset('plugins/tippy/tippy-bundle.umd.min.js')}}"></script>
-    <script>
-        tippy('[data-tippy-content]', {
-                animation: 'scale-extreme',
-                theme: 'material',
-            });
-    </script>
-    @if (config('services.google.recaptcha.enable') == 'on')
-        <!-- Google reCaptcha JS -->
-        <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.google.recaptcha.site_key') }}"></script>
-        <script>
-            grecaptcha.ready(function() {
-                grecaptcha.execute('{{ config('services.google.recaptcha.site_key') }}', {action: 'contact'}).then(function(token) {
-                    if (token) {
-                    document.getElementById('recaptcha').value = token;
-                    }
-                });
-            });
-        </script>
-    @endif
     
-@endsection

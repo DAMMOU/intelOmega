@@ -58,7 +58,7 @@
 
 			@yield('content')
 
-		</div><!-- End Page -->
+		</main><!-- End Page -->
 
 		<!-- JQuery-->
 		<script src="{{URL::asset('plugins/jquery/jquery-3.6.0.min.js')}}"></script>

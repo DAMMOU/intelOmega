@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocaleController;
@@ -27,3 +28,13 @@ Route::controller(ContactUsController::class)->group(function () {
 
 // LOCALE ROUTES
 Route::get('/locale/{lang}', [LocaleController::class, 'language'])->name('locale');
+
+
+// ADMIN ROUTES
+
+    // ADMIN DASHBOARD ROUTES
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+
+
+
+  

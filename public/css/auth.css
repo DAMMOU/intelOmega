@@ -111,6 +111,41 @@ html, body {
     background-color: #1e1e2d;
   }
   
+  .divider {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 1rem 0;
+  }
+
+.divider {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 1rem 0;
+}
+.divider .divider-text {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    padding: 0 1rem;
+    text-transform: uppercase;
+}
+.divider .divider-text:before {
+    right: 100%;
+}
+.divider .divider-text:after {
+    left: 100%;
+}
+.divider .divider-text:after, .divider .divider-text:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    border-top: 1px solid #dfe3e7;
+}
 
 
 

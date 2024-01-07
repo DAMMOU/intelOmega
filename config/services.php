@@ -31,4 +31,57 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+
+
+
+        /*
+    |--------------------------------------------------------------------------
+    | Social Media Vendors for OAuth for laravel/socialiste
+    |--------------------------------------------------------------------------
+    */
+
+    'twitter' => [
+        'enable' => env('CONFIG_ENABLE_LOGIN_TWITTER'),
+        'client_id' => env('TWITTER_API_KEY'),
+        'client_secret' => env('TWITTER_API_SECRET'),
+        'redirect' => env('TWITTER_REDIRECT'),
+    ],
+
+    'linkedin' => [
+        'enable' => env('CONFIG_ENABLE_LOGIN_LINKEDIN'),
+        'client_id' => env('LINKEDIN_API_KEY'),
+        'client_secret' => env('LINKEDIN_API_SECRET'),
+        'redirect' => env('LINKEDIN_REDIRECT'),
+    ],
+
+    'google' => [
+        'enable' => env('CONFIG_ENABLE_LOGIN_GOOGLE'),
+        'client_id' => env('GOOGLE_API_KEY'),
+        'client_secret' => env('GOOGLE_API_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT'),
+        
+        'recaptcha' => [
+            'enable' => env('GOOGLE_RECAPTCHA_ENABLE'),
+            'site_key' => env('GOOGLE_RECAPTCHA_SITE_KEY'),
+            'secret_key' => env('GOOGLE_RECAPTCHA_SECRET_KEY'),
+        ],  
+        /* Google Maps API Key */
+        'maps' => [
+            'enable' => env('GOOGLE_MAPS_ENABLE'),
+            'key' => env('GOOGLE_MAPS_KEY'),   
+        ],   
+        /* Google Analytics Tracking ID */
+        'analytics' => [
+            'enable' => env('GOOGLE_ANALYTICS_ENABLE'),
+            'id' => env('GOOGLE_ANALYTICS_ID'),   
+        ],
+    ],
+
+    'facebook' => [
+        'enable' => env('CONFIG_ENABLE_LOGIN_FACEBOOK'),
+        'client_id' => env('FACEBOOK_API_KEY'),
+        'client_secret' => env('FACEBOOK_API_SECRET'),
+        'redirect' => env('FACEBOOK_REDIRECT'),
+    ],
+
 ];

@@ -158,9 +158,14 @@ return [
 
     'providers' => ServiceProvider::defaultProviders()->merge([
         /*
-         * Package Service Providers...
+         * Laravel Framework Service Providers...
          */
 
+         
+        /*
+         * Package Service Providers...
+         */
+        Spatie\Permission\PermissionServiceProvider::class,
         /*
          * Application Service Providers...
          */

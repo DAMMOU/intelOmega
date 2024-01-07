@@ -26,28 +26,20 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => ['required', 'confirmed', Rules\Password::min(8)],
+            'password' => ['required', 'confirmed', Rules\Password::min(3)],
             'country' => 'required',
             'agreement' => 'required',
+            'g-recaptcha-response' => 'recaptcha',
         ]);
-
-        $this->createNewUser($request);
-
-        toastr()->success(__('Congratulation! You can now proceed to login with your email'));
-        return redirect()->route('login');
-    }
-
-
-    public function createNewUser(Request $request)
-    {
+       
+        
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'country' => $request->country
         ]);
-        
-        event(new Registered($user));
+        //event(new Registered($user));
 
         $referral_code = ($request->hasCookie('referral')) ? $request->cookie('referral') : ''; 
         $referrer = ($referral_code != '') ? User::where('referral_id', $referral_code)->firstOrFail() : '';
@@ -68,7 +60,10 @@ class RegisteredUserController extends Controller
         $user->referral_id = strtoupper(Str::random(15));
         $user->referred_by = $referrer_id;
         $user->save();      
-     
+
+
+        toastr()->success(__('Congratulation! You can now proceed to login with your email'));
+        return redirect()->route('login');
     }
 
 
