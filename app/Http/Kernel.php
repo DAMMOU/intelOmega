@@ -66,11 +66,16 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'PreventBackHistory' => \App\Http\Middleware\PreventBackHistory::class,
+        'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
+        'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
+    
     ];
 
     protected $routeMiddleware = [
         // ... Autres middleware de route
         'setLocale' => \App\Http\Middleware\SetLocale::class,
+        
 
     ];
 }

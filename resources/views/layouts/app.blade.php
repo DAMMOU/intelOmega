@@ -37,7 +37,7 @@
 				<div class="app-content main-content">
 
 					<div class="side-app">
-
+                        @include('layouts.nav-top')
 						@yield('content')						
 
                     </div>                   

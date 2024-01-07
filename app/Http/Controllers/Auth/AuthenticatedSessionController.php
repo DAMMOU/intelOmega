@@ -16,14 +16,12 @@ use Spatie\Permission\Contracts\Role;
 class AuthenticatedSessionController extends Controller
 {
     
-
-
-
     /**
      * Display the login view.
      *
      * @return \Illuminate\View\View
      */
+
     public function create()
     {
         $information = metadataInformation();
@@ -60,6 +58,24 @@ class AuthenticatedSessionController extends Controller
             ])
             ->withInput($request->only('email'));
     }
+
+     /**
+     * Destroy an authenticated session.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy(Request $request)
+    {
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
+
 
 
 

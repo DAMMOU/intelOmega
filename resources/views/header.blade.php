@@ -25,7 +25,10 @@
                     <a class="nav-link menu-link" href="#">{{ __('Blogs') }}</a>
                 </li>
                 <li class="nav-item menu-link">
-                    <a class="nav-link menu-link" href="#">{{ __('FAQs') }}</a>
+                    <a class="nav-link menu-link" href="#features-wrapper">{{ __('Features') }}</a>
+                </li>
+                <li class="nav-item menu-link">
+                    <a class="nav-link menu-link" href="#faq-wrapper">{{ __('FAQs') }}</a>
                 </li>
                 <li class="nav-item menu-link">
                     <a class="nav-link menu-link" href="{{ route('contact-us') }}">{{ __('Contact Us') }}</a>
@@ -34,11 +37,19 @@
             
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="menu-buttons">
                 <li class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <div class="d-flex align-items-center">
-                        <a class="btn btn-dark menu-button" href="#">{{ __('Dashboard') }}</a>
-                        <a class="btn btn-success menu-button" href="#">{{ __('Login') }}</a>
-                        <a class="btn btn-dark menu-button" href="{{ route('register') }}">{{ __('Sign Up') }}</a>
-                    </div>
+                    @if (Route::has('login'))
+                        
+                        <div class="d-flex align-items-center">
+                            @auth
+                                <a class="btn btn-dark menu-button" href="#">{{ __('Dashboard') }}</a>
+                            @else
+                                <a class="btn btn-success menu-button" href="{{ route('register') }}">{{ __('Login') }}</a>
+                                @if (Route::has('register'))
+                                    <a class="btn btn-dark menu-button" href="{{ route('register') }}">{{ __('Sign Up') }}</a>
+                                @endif
+                            @endif
+                        </div>
+                    @endif
                 </li>
             </ul>
         </div>
